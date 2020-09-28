@@ -1,6 +1,5 @@
 package io.vijay.stackoverflow;
 
-import io.vijay.stackoverflow.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,9 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StackoverflowApplication {
 
     public static void main(String[] args) {
-
-//        /sdghskjdhgjkshgkjh
-
         SpringApplication.run(StackoverflowApplication.class, args);
     }
 
