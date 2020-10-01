@@ -15,7 +15,7 @@ public class QuestionController {
     QuestionService questionService;
 
     @PostMapping("askQuestion")
-    public String askQuestion(@RequestBody String question){
+    public String askQuestion(@RequestBody String question) {
         questionService.saveQuestion(question);
         return question;
     }

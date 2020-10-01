@@ -1,52 +1,17 @@
-package io.vijay.stackoverflow.entities;
+package io.vijay.stackoverflow.shared.dto;
 
-import org.springframework.core.SpringVersion;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.io.Serializable;
-import java.time.LocalDate;
 
-@Entity(name = "users")
-public class User implements Serializable {
-
-    private static final long serialVersionUID = -1534681186222159952L;
-    @Id
-    @GeneratedValue
-    private long id;
-    @Column(nullable = false)
+public class    UserDto implements Serializable {
+    private static final long serialVersionUID = 572313103934953498L;
     private String userId;
-
-    @Column(nullable = false, length = 50)
     private String firstName;
-
-    @Column(nullable = false, length = 50)
     private String lastName;
-
-    @Column(nullable = false, length = 120)
     private String email;
-
-    @Column(nullable = false)
+    private String password;
     private String encryptedPassword;
-
     private String emailVerificationToken;
-
-    @Column(nullable = false)
-    private Boolean getEmailVerificationStatus = false;
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+    private Boolean emailVerificationStatus = false;
 
     public String getUserId() {
         return userId;
@@ -80,6 +45,14 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getEncryptedPassword() {
         return encryptedPassword;
     }
@@ -96,12 +69,11 @@ public class User implements Serializable {
         this.emailVerificationToken = emailVerificationToken;
     }
 
-    public Boolean getGetEmailVerificationStatus() {
-        return getEmailVerificationStatus;
+    public Boolean getEmailVerificationStatus() {
+        return emailVerificationStatus;
     }
 
-    public void setGetEmailVerificationStatus(Boolean getEmailVerificationStatus) {
-        this.getEmailVerificationStatus = getEmailVerificationStatus;
+    public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
+        this.emailVerificationStatus = emailVerificationStatus;
     }
-
 }
