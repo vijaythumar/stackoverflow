@@ -2,6 +2,8 @@ package io.vijay.stackoverflow.shared.dto;
 
 import java.io.Serializable;
 
+// This page Transfer all data into multiple pages and give data to specific pages
+
 public class    UserDto implements Serializable {
     private static final long serialVersionUID = 572313103934953498L;
     private String userId;

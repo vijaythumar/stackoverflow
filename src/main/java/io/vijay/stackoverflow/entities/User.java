@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+//This page define stature of data how data will come in controller
+
 @Entity(name = "users")
 public class User implements Serializable {
 
@@ -26,7 +28,7 @@ public class User implements Serializable {
     @Column(nullable = false, length = 50)
     private String lastName;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 120, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -49,7 +51,7 @@ public class User implements Serializable {
         return userId;
     }
 
-    public static void setUserId(String userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -81,7 +83,7 @@ public class User implements Serializable {
         return encryptedPassword;
     }
 
-    public static void setEncryptedPassword(String encryptedPassword) {
+    public void setEncryptedPassword(String encryptedPassword) {
         this.encryptedPassword = encryptedPassword;
     }
 

@@ -1,5 +1,7 @@
 package io.vijay.stackoverflow.request;
 
+// This page hold incoming data from user or form
+
 public class UserDetailsRequestModel {
     private String firstName;
     private String lastName;

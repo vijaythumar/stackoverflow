@@ -8,6 +8,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+// This page handles all work where is data going and stuff
+
 @RestController
 @RequestMapping("users") //Http://localhost:8080/users
 public class UserController {

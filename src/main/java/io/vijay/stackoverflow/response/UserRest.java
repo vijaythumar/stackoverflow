@@ -1,5 +1,7 @@
 package io.vijay.stackoverflow.response;
 
+// This page give response and do not give private data like password
+
 public class UserRest {
     private String userId;
     private String firstName;

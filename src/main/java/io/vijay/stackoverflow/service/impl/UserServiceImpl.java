@@ -8,6 +8,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+// This page is logic page in this data will process and copy in multiple ui and core
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -17,11 +19,13 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDto createUser(UserDto user) {
 
+        if (userRepository.findByEmail(user.getEmail()) != null) throw new RuntimeException("User already exists");
+
         User user1 = new User();
         BeanUtils.copyProperties(user, user1);
 
-        User.setEncryptedPassword("test");
-        User.setUserId("testUserID");
+        user1.setEncryptedPassword("test");
+        user1.setUserId("testUserID");
 
         User storeUserDetails = userRepository.save(user1);
 
