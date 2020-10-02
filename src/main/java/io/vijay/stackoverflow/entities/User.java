@@ -16,6 +16,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue
     private long id;
+
     @Column(nullable = false)
     private String userId;
 
@@ -36,10 +37,6 @@ public class User implements Serializable {
     @Column(nullable = false)
     private Boolean getEmailVerificationStatus = false;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public long getId() {
         return id;
     }
@@ -52,7 +49,7 @@ public class User implements Serializable {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public static void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -84,7 +81,7 @@ public class User implements Serializable {
         return encryptedPassword;
     }
 
-    public void setEncryptedPassword(String encryptedPassword) {
+    public static void setEncryptedPassword(String encryptedPassword) {
         this.encryptedPassword = encryptedPassword;
     }
 
@@ -103,5 +100,4 @@ public class User implements Serializable {
     public void setGetEmailVerificationStatus(Boolean getEmailVerificationStatus) {
         this.getEmailVerificationStatus = getEmailVerificationStatus;
     }
-
 }
